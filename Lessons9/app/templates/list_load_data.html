@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div style="text-align: center; width: 100%">
+        <table style="margin: 0 auto; text-align: center">
+            <tr style="text-align: center;">
+                <td style="width: 25%">Номер загрузки</td>
+                <td style="width: 25%;">Наименование файла</td>
+                <td style="width: 25%;">Дата загрузки</td>
+                <td style="width: 25%;">Наименование обученной модели</td>
+            </tr>
+            {% for list_datum in list_data %}
+                <tr>
+                    <td>{{ list_datum + 1 }}</td>
+                    <td><a href="/download/{{ list_data[list_datum]['filename'] }}" target="_blank"  style="margin-right: 5px;">{{ list_data[list_datum]['filename'] }}</a></td>
+                    <td>{{ list_data[list_datum]['time_upload'] }}</td>
+                    <td>
+                        {% if list_data[list_datum]['model_name'] is none %}
+                            <a href="/create_model/{{ list_data[list_datum]['filename'] }}">Создать модель</a>
+                        {% else %}
+                            {{ list_data[list_datum]['model_name']  }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

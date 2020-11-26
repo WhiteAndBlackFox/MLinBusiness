@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Это тестовый проект по интеграции обученной модели (NN) в Flask</title>
+        <style type="text/css">
+            H1 {
+                font-size: 120%; /* Размер шрифта */
+                font-family: Verdana, Arial, Helvetica, sans-serif; /* Семейство шрифта */
+                color: #336; /* Цвет текста */
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Это тестовый проект по интеграции обученной модели (NN) в Flask</h1>
+    <div><a href="/index">Посмотреть на "Привет мир"</a></div>
+    <div><a href="/load_new_data">Загрузить новые данные</a></div>
+    <div><a href="/list_load_data">Список ранее загруженных файлов</a></div>
+    <hr/>
+    {% block content %}{% endblock %}
+    </body>
+</html>
